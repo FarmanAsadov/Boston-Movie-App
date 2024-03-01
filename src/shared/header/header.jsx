@@ -12,10 +12,8 @@ const Header = ({logo, title, subTitle}) => {
                     </div>
                 </div>
                 <div className="right">
-                    <p>Home</p>
-                    <p>Now Playing</p>
-                    {/* <Link to="/">Home</Link>
-                    <Link to="/nowPlaying">Now Playing</Link> */}
+                    <Link to="/">Home</Link>
+                    <Link to="/now_playing">Now Playing</Link> 
                 </div>
             </div>
     )
