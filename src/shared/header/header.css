@@ -5,15 +5,52 @@
     position: sticky;
     top: 0;
     width: 100%;
+    align-items: center;
+    background-color: #fff;
+    height: 100px;
 }
 .left{
     display: flex;
 }
+.info{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .info h4{
     font-size: 23px;
-    margin-top: 15px;
 }
 .left-logo{
     width: 120px;
-    height: auto;
+    height: 80px;
+    margin: 10px 20px 10px 60px;
+}
+.right{
+    display: flex;
+    align-items: baseline;
+    width: 400px;
+    justify-content: space-around
+}
+.active {
+    border-bottom: 6px solid hsl(46, 95%, 51%);
+}
+.link{
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: 500;
+    color: #000;
+}
+
+.btn{
+    padding: 10px 50px
+}
+
+.inpt{
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-right: 10px;
+    outline: none;
+    width: 19%;
+    border: 2px solid #000;
 }

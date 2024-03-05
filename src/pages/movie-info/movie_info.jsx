@@ -1,25 +1,39 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { SMALL_IMG_COVER_BASE_URL } from "../../config";
+import { BACKDROP_BASE_URL, SMALL_IMG_COVER_BASE_URL } from "../../config";
+import "./movie_info.css";
 
 const Movie_Info = () => {
-    const location = useLocation();
-    const {state} = location;
-    const [data,setData] = useState([]);
-    useEffect(()=>{
-        setData(state);
-    },[state]);
-    
-    return (
-        <div>        
-            <div key={data.id}>
-                <img src={`${SMALL_IMG_COVER_BASE_URL}${data.poster_path}`} alt={data.title} />
-                <h1>{data.title}</h1>
-                <p>{data.overview}</p>
-            </div>
-        </div>
-    );
-}
+  const location = useLocation();
+  const { state = {} } = location;
+  const [data, setData] = useState(state);
 
+  useEffect(() => {
+    setData(state);
+  }, [state]);
+
+  return (
+    <div
+      className="movie_info"
+      style={{
+        background: data
+          ? `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+             url("${BACKDROP_BASE_URL}${data.backdrop_path}") no-repeat center / cover`
+          : "black",
+      }}
+    >
+      <div className="movie_info_products">
+        <div className="info_img">
+          <img src={`${SMALL_IMG_COVER_BASE_URL + data.poster_path}`} alt="" />
+        </div>
+        <div className="info_title">
+          <h1 className="title">{data.title}</h1>
+          <h3>{data.release_date}</h3>
+          <span className="title">{data.overview}</span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Movie_Info;

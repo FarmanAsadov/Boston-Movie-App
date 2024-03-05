@@ -1,0 +1,17 @@
+.movie_info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 89.87vh; 
+  }
+  .movie_info .movie_info_products {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 10%;
+  }
+  .movie_info .movie_info_products .info_title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+  }/*# sourceMappingURL=movieInfo.css.map */
